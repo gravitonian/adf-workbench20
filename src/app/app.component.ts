@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'ADF Workbench';
+
+  onLoginSuccess($event) {
+    console.log('Successful login: ' + $event.value);
+  }
+
+  onLoginError($event) {
+    console.log('Failed login: ' + $event.value);
+  }
 }

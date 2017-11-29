@@ -9,7 +9,14 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "app.config.json",
+        { "glob": "**/*", "input": "../resources", "output": "./resources" },
+        { "glob": "**/*", "input": "../node_modules/@alfresco/adf-core/prebuilt-themes", "output": "./assets/prebuilt-themes" },
+        { "glob": "**/*", "input": "../node_modules/@alfresco/adf-core/bundles/assets",  "output": "./assets/" },
+        { "glob": "**/*", "input": "../node_modules/@alfresco/adf-insights/bundles/assets", "output": "./assets/" },
+        { "glob": "**/*", "input": "../node_modules/@alfresco/adf-process-services/bundles/assets", "output": "./assets/" },
+        { "glob": "**/*", "input": "../node_modules/@alfresco/adf-content-services/bundles/assets", "output": "./assets/" }
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -21,11 +28,18 @@
       "styles": [
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/moment/min/moment.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
+      },
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "../node_modules/"
+        ]
       }
     }
   ],
